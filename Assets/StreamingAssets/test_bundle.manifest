@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1036356073
+CRC: 3639768516
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 84f13f036f88cf061dfcf7c55cb27fe7
+    Hash: 4169a9799356b82cd64bfcef70588053
   TypeTreeHash:
     serializedVersion: 2
     Hash: 5ad585dd02dfb5016c0dad519eab8f49
@@ -12,5 +12,5 @@ ClassTypes:
 - Class: 49
   Script: {instanceID: 0}
 Assets:
-- Assets/AssetsPackages/Charactors/README.md
+- Assets/AssetsPackages/Excels/test.txt
 Dependencies: []

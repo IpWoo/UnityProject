@@ -1,5 +1,6 @@
 ﻿using UnityEditor;
 using System.IO;
+using UnityEngine;
 
 public class CreateAssetBundles
 {
@@ -11,8 +12,8 @@ public class CreateAssetBundles
 		{
 			Directory.CreateDirectory(assetBundleDirectory);
 		}
-		BuildPipeline.BuildAssetBundles(assetBundleDirectory, 
-			BuildAssetBundleOptions.None, 
+		BuildPipeline.BuildAssetBundles(Application.streamingAssetsPath, 
+			BuildAssetBundleOptions.UncompressedAssetBundle, 
 			BuildTarget.StandaloneWindows);
 	}
 }
