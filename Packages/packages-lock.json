@@ -1,5 +1,19 @@
 {
   "dependencies": {
+    "com.autodesk.fbx": {
+      "version": "3.1.0-preview.2",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.cn"
+    },
+    "com.coffee.upm-git-extension": {
+      "version": "https://github.com/mob-sakai/UpmGitExtension.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "c5bd85b033ee9994cf7b4d711479e2602d42c639"
+    },
     "com.unity.collab-proxy": {
       "version": "1.2.16",
       "depth": 0,
@@ -12,6 +26,17 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {},
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.formats.fbx": {
+      "version": "3.2.1-preview.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.recorder": "2.2.0-preview.4",
+        "com.unity.timeline": "1.0.0",
+        "com.autodesk.fbx": "3.1.0-preview.2"
+      },
       "url": "https://packages.unity.cn"
     },
     "com.unity.ide.rider": {
@@ -28,6 +53,15 @@
       "depth": 0,
       "source": "registry",
       "dependencies": {},
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.recorder": {
+      "version": "2.2.0-preview.4",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.timeline": "1.0.0"
+      },
       "url": "https://packages.unity.cn"
     },
     "com.unity.test-framework": {

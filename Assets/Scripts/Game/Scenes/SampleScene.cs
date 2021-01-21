@@ -1,29 +1,42 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using UnityEditor;
 using UnityEngine;
 
 public class SampleScene : MonoBehaviour
 {
-	// Start is called before the first frame update
-	void Start()
-	{
-		// this.transform.Find();
-		var myLoadedAssetBundle =
-			AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "test_bundle"));
-		if (myLoadedAssetBundle == null)
-		{
-			Debug.Log("Failed to load AssetBundle!");
-			return;
-		}
-		
-		var textAsset = myLoadedAssetBundle.LoadAsset<TextAsset>("Assets/AssetsPackages/Excels/test.txt");
-		Debug.Log(textAsset.text);
-		// Instantiate(prefab);
-	}
+    public string myName;
+    public int myId;
+    public GameObject obj;
 
-	// Update is called once per frame
-	void Update()
-	{
-	}
+    private void Awake()
+    {
+        Debug.Log("Awake");
+    }
+
+    private void OnEnable()
+    {
+        Debug.Log("OnEnable");
+    }
+
+    void Start()
+    {
+        Debug.Log("Start");
+        StartCoroutine("Print");
+    }
+
+    IEnumerator Print()
+    {
+        for (;;)
+        {    
+            Debug.Log("hello");
+            yield return new WaitForSeconds(1f);
+        }
+    }
+
+    void Update()
+    {
+    }
 }
