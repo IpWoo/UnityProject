@@ -14,6 +14,6 @@ public class CreateAssetBundles
 		}
 		BuildPipeline.BuildAssetBundles(Application.streamingAssetsPath, 
 			BuildAssetBundleOptions.UncompressedAssetBundle, 
-			BuildTarget.StandaloneWindows);
+			BuildTarget.StandaloneOSX);
 	}
 }
