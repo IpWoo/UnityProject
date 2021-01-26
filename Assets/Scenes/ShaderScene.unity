@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 1160313028}
   - component: {fileID: 1160313031}
   - component: {fileID: 1160313032}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 1160313030}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 1
@@ -282,7 +282,7 @@ MonoBehaviour:
   isGlobal: 1
   blendDistance: 0
   weight: 1
-  priority: 0
+  priority: -1
 --- !u!1 &1430104282
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,6 +545,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suzanne
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c51967ed0f5ecd84db6f99d7504b83cf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c51967ed0f5ecd84db6f99d7504b83cf,
         type: 3}
