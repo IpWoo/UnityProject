@@ -13,6 +13,7 @@ public class SampleScene : MonoBehaviour
 
     private void Awake()
     {
+        
         Debug.Log("Awake");
     }
 
