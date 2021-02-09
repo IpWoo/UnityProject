@@ -31,16 +31,43 @@ Material:
         m_Texture: {fileID: 2800000, guid: 5eadd1c8d6980416c8c91d1ae8e5437d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _CubeMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EnvMap:
+        m_Texture: {fileID: 8900000, guid: 5e1d300e17f7c4659bfbb8a7ffd5e818, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 4863acf72880a4a3289875f82a28ee43, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 07063d2b21681422c9c44da2e4c72f02, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SkinLUT:
+        m_Texture: {fileID: 2800000, guid: f5b22540e5d9d4d60bc7722cf2f9dd23, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _CurveOffset: 0.71
+    - _Curveoffset: 0
+    - _Expose: 1
     - _Glossiness: 0.5
+    - _MetalAdjust: 0
     - _Metallic: 0
+    - _Rotate: 0
+    - _RoughnessAdjust: 0
+    - _SpecShininess: 10
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Tint: {r: 1, g: 1, b: 1, a: 1}
+    - custom_SHAb: {r: 0.024794403, g: 0.079142764, b: 0.010081509, a: 0.27139956}
+    - custom_SHAg: {r: 0.016176205, g: 0.013123169, b: 0.010844407, a: 0.2235878}
+    - custom_SHAr: {r: 0.008851677, g: -0.04847363, b: 0.010515226, a: 0.23275618}
+    - custom_SHBb: {r: 0.023126757, g: 0.014546214, b: -0.00551911, a: 0.010580686}
+    - custom_SHBg: {r: 0.013575776, g: 0.013889035, b: -0.00590481, a: 0.010497805}
+    - custom_SHBr: {r: 0.008007302, g: 0.012454456, b: -0.009288381, a: 0.009045707}
+    - custom_SHC: {r: 0.0148294205, g: 0.018255401, b: 0.016014207, a: 1}
