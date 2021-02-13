@@ -102,7 +102,7 @@ public class CubemapSHProjector : EditorWindow
         }
     }
 
-    [MenuItem("美术/SH系数生成", false, 2100)]
+    [MenuItem("TA/SH系数生成", false, 2100)]
     static void Init()
     {
         CubemapSHProjector window = (CubemapSHProjector)EditorWindow.GetWindow(typeof(CubemapSHProjector));

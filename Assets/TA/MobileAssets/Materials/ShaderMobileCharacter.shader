@@ -173,12 +173,13 @@
                 // Direct Diffuse
                 half diff_term = max(0.0, dot(normal_dir, light_dir));
                 half3 common_diffuse = diff_term * _LightColor0.xyz * atten * base_color.xyz;
-
-                half half_lambert = (diff_term + 1.0) * 0.5;
-                float2 uv_lut = float2(lerp(0.01, 0.9, diff_term * atten + _SSSOffset), _CurveOffset);
+                
+                float2 uv_lut = float2(diff_term * atten + _SSSOffset, _CurveOffset);
                 float3 lut_color_gamma = tex2D(_SkinLUT, uv_lut);
                 half3 lut_color = pow(lut_color_gamma, 2.2);
-                half3 sss_diffuse = lut_color * _LightColor0.xyz * base_color.xyz * half_lambert;
+                half half_lambert = (diff_term + 1.0) * 0.5;
+                half3 sss_diffuse = lut_color * base_color * half_lambert * _LightColor0.xyz;
+
                 half3 direct_diffuse = lerp(common_diffuse, sss_diffuse, skin_area);
 
                 // Direct Specular
@@ -186,11 +187,13 @@
                 half smoothness = 1.0 - roughness;
                 half shininess = lerp(1, _SpecShininess, smoothness);
                 half spec_term = pow(max(0.0, dot(normal_dir, half_dir)), shininess);
-                half3 direct_specular = spec_term * spec_color * atten * _LightColor0;
+                half3 spec_skin_color = lerp(spec_color, 0.1, skin_area);
+                half3 direct_specular = spec_term * spec_skin_color * atten * _LightColor0;
+                
 
                 // Indirect diffuse
-
                 half3 env_diffuse = custom_sh(normal_dir) * base_color * half_lambert;
+                env_diffuse = lerp(env_diffuse * 0.5, env_diffuse* 0.8, skin_area);
 
                 // Indirect Specular
                 half3 reflect_dir = reflect(-view_dir, normal_dir);
@@ -204,7 +207,6 @@
                 float3 final_color = direct_diffuse + direct_specular + env_diffuse + env_specular;
                 final_color = ACES_Tonemapping(final_color);
                 final_color = pow(final_color, 1.0 / 2.2);
-                // final_color = ACES_Tonemapping(final_color);
 
                 half4 col = half4(final_color, 1.0);
                 return col;
