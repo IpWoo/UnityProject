@@ -174,11 +174,13 @@
                 half diff_term = max(0.0, dot(normal_dir, light_dir));
                 half3 common_diffuse = diff_term * _LightColor0.xyz * atten * base_color.xyz;
 
-                half half_lambert = (diff_term + 1.0) * 0.5;
-                float2 uv_lut = float2(lerp(0.01, 0.9, diff_term * atten + _SSSOffset), _CurveOffset);
+                
+                float2 uv_lut = float2(diff_term * atten + _SSSOffset, _CurveOffset);
                 float3 lut_color_gamma = tex2D(_SkinLUT, uv_lut);
                 half3 lut_color = pow(lut_color_gamma, 2.2);
-                half3 sss_diffuse = lut_color * _LightColor0.xyz * base_color.xyz * half_lambert;
+                half half_lambert = (diff_term + 1.0) * 0.5;
+                half3 sss_diffuse = lut_color * base_color * half_lambert * _LightColor0.xyz;
+
                 half3 direct_diffuse = lerp(common_diffuse, sss_diffuse, skin_area);
 
                 // Direct Specular
