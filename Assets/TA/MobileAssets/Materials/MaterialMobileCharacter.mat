@@ -56,11 +56,11 @@ Material:
     - _Curveoffset: 0
     - _Expose: 1
     - _Glossiness: 0.5
-    - _MetalAdjust: -0.163
+    - _MetalAdjust: 0
     - _Metallic: 0
     - _Rotate: 0
-    - _RoughnessAdjust: 0.259
-    - _SSSOffset: 0.357
+    - _RoughnessAdjust: 0
+    - _SSSOffset: 0.4
     - _SpecShininess: 10
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
